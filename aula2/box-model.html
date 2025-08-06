@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Box Model - Exemplos Completos</title>
+  <style>
+    /* Estilo base do corpo da página */
+    body {
+      font-family: sans-serif;  /* Fonte simples e limpa */
+      line-height: 1.6;         /* Espaçamento entre linhas */
+      padding: 20px;            /* Espaço interno da página */
+    }
+
+    /* Estilo para títulos h2 */
+    h2 {
+      margin-top: 40px;         /* Espaço acima do título */
+      border-bottom: 2px solid #ccc;  /* Linha cinza abaixo do título */
+      padding-bottom: 5px;      /* Espaço interno abaixo do texto do título */
+    }
+
+    /* Espaçamento entre os exemplos */
+    .box {
+      margin-bottom: 20px;      /* Espaço abaixo de cada caixa */
+    }
+
+    /* Estilos para as caixas que demonstram margens colapsadas */
+    .colapsadas .caixa1 {
+      background-color: pink;
+      margin-bottom: 30px;      /* Margem inferior grande */
+      padding: 20px;
+      border: 2px solid red;
+    }
+
+    .colapsadas .caixa2 {
+      background-color: lightgreen;
+      margin-top: 20px;         /* Margem superior */
+      padding: 20px;
+      border: 2px solid green;
+    }
+
+    /* Caixa 2 dentro de um container que previne o colapso */
+    .colapsadas .sem-colapso .caixa2 {
+      margin-top: 20px;
+      padding: 20px;
+      border: 2px solid green;
+      background-color: lightgreen;
+    }
+
+    /* Container com padding para impedir colapso de margens */
+    .colapsadas .sem-colapso {
+      padding-top: 1px;         /* Pequeno padding que quebra o colapso */
+      background-color: #eee;
+    }
+
+    /* Caixa visual para mostrar content, padding, border e margin */
+    .visual {
+      width: 200px;
+      padding: 20px;            /* Espaço interno entre conteúdo e borda */
+      border: 5px solid orange; /* Borda visível */
+      margin: 30px;             /* Espaço externo da borda */
+      background-color: lightgray; /* Fundo cinza para o conteúdo */
+      box-sizing: content-box;  /* Comportamento padrão do box model */
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Exemplos Completos de Box Model</h1>
+
+  <!-- 1. Box-sizing: content-box -->
+  <h2>1. Comportamento padrão do padding no tamanho da caixa (box-sizing: content-box)</h2>
+  <div class="box" style="
+    width: 200px;                /* Largura do conteúdo */
+    padding: 20px;               /* Espaço interno */
+    border: 2px solid blue;      /* Borda */
+    background-color: lightblue; /* Fundo */
+    box-sizing: content-box;">   <!-- padding e borda são adicionados fora da largura -->
+    Conteúdo
+  </div>
+  <p>Largura renderizada = 200 + 2×20 (padding) + 2×2 (borda) = 244px</p>
+
+  <!-- 2. Corrigindo com border-box -->
+  <h2>2. Corrigindo com box-sizing: border-box</h2>
+  <div class="box" style="
+    width: 200px;
+    padding: 20px;
+    border: 2px solid green;
+    background-color: lightgreen;
+    box-sizing: border-box;">  <!-- padding e borda estão dentro da largura total -->
+    Conteúdo
+  </div>
+  <p>A largura total continua 200px, pois o padding e a borda estão dentro dela.</p>
+
+  <!-- 3. Padding e Margin com 1 a 4 valores -->
+  <h2>3. Padding e Margin com 1, 2, 3 e 4 valores</h2>
+
+  <!-- 1 valor: todos os lados iguais -->
+  <div class="box" style="margin: 20px; padding: 10px; background-color: #fdd;">
+    <strong>1 valor:</strong> margin: 20px;
+  </div>
+
+  <!-- 2 valores: vertical | horizontal -->
+  <div class="box" style="margin: 10px 20px; padding: 10px; background-color: #dfd;">
+    <strong>2 valores:</strong> margin: 10px 20px;
+  </div>
+
+  <!-- 3 valores: topo | horizontal | base -->
+  <div class="box" style="margin: 5px 10px 15px; padding: 10px; background-color: #ddf;">
+    <strong>3 valores:</strong> margin: 5px 10px 15px;
+  </div>
+
+  <!-- 4 valores: topo | direita | base | esquerda -->
+  <div class="box" style="margin: 5px 10px 15px 25px; padding: 10px; background-color: #ffd;">
+    <strong>4 valores:</strong> margin: 5px 10px 15px 25px;
+  </div>
+
+  <!-- 4. Margens Colapsadas -->
+  <h2>4. Margens colapsadas</h2>
+  <div class="colapsadas">
+    <div class="caixa1">Caixa 1 (margin-bottom: 30px)</div>
+    <div class="caixa2">Caixa 2 (margin-top: 20px)</div>
+    <p><strong>O espaço entre as caixas é de apenas 30px, não 50px, porque as margens colapsaram.</strong></p>
+
+    <div class="sem-colapso">
+      <div class="caixa2">Caixa 2 (com padding no contêiner para impedir o colapso)</div>
+    </div>
+    <p><strong>Agora o espaço é de 30px + 20px = 50px, pois o padding quebrou o colapso de margem.</strong></p>
+  </div>
+
+  <!-- 5. Visualização do Box Model -->
+  <h2>5. Comparação visual entre content, padding, border e margin</h2>
+  <div class="visual">
+    <p style="margin: 0;">Conteúdo interno</p>
+  </div>
+  <p>
+    <strong>Explicação:</strong><br>
+    - <span style="background-color: lightgray;">Cinza</span>: conteúdo<br>
+    - Padding: 20px invisível (dentro da borda)<br>
+    - Borda laranja: 5px<br>
+    - Margem externa: 30px ao redor da borda
+  </p>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>CSS - Bordas</title>
+     <style>
+
+          /* Estilo para o elemento com id "conteudo" */
+          #conteudo {
+               /* Define a largura das bordas: 
+                  topo: 10px, direita: 5px, base: 2px, esquerda: 1px */
+               border-width: 10px 30px;
+
+               /* Define o estilo das bordas:
+                  topo: sólida, direita: tracejada, base: pontilhada, esquerda: dupla */
+               border-style: double;
+
+               /* Define a cor das bordas:
+                  topo: vermelho, direita: verde, base: azul, esquerda: laranja */
+               border-color: red green ;
+
+               /* Define a largura do elemento */
+               width: 200px;
+
+               /* Define a altura do elemento */
+               height: 200px;
+
+               /* Centraliza horizontalmente com margem automática */
+               margin: 0 auto;
+
+               /* Espaçamento superior de 50px */
+               margin-top: 50px;
+          }
+
+     </style>
+</head>
+<body>
+
+     <!-- Container pai (não estilizado) -->
+     <div id="bloco">
+          <!-- Caixa com bordas diferentes em cada lado -->
+          <div id="conteudo">Bordas</div>
+     </div>
+     
+</body>
+</html>

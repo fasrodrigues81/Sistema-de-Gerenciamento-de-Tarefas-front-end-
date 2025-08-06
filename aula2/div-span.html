@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Div vs Span</title>
+  <style>
+    .div-exemplo {
+      background-color: #3498db;
+      color: white;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .span-exemplo {
+      background-color: #e74c3c;
+      color: white;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Exemplo de &lt;div&gt; (comportamento block)</h2>
+  <div class="div-exemplo">Eu sou uma div</div>
+  <div class="div-exemplo">Eu também sou uma div</div>
+  <div style="border: 2px solid red;"> oi,  eu sou uma div</div>
+
+  <h2>Exemplo de &lt;span&gt; (comportamento inline)</h2>
+  <p>
+    Este é um texto com <span class="span-exemplo">um span aqui</span> e
+    <span class="span-exemplo">outro span aqui</span> no meio da frase.
+    <span style="border: blue 2px solid;">spanspanspanspanspanspanspanspanspanspanspanspan</span>
+  </p>
+
+</body>
+</html>

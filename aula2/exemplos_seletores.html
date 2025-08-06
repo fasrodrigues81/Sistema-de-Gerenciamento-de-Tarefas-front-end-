@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemplos de Seletores CSS</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <style>
+    
+/* Seletor de Tipo */
+p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* Classe */
+.alerta {
+  color: red;
+}
+
+/* ID */
+#cabecalho {
+  background-color: lightgray;
+  padding: 10px;
+}
+
+/* Universal */
+* {
+  box-sizing: border-box;
+}
+
+/* Descendente */
+div p {
+  color: green;
+}
+
+/* Filho Direto */
+ul > li {
+  font-weight: bold;
+}
+
+/* Irmão Adjacente */
+h1 + p {
+  color: orange;
+}
+
+/* Irmão Geral */
+h1 ~ p {
+  font-style: italic;
+}
+
+/* Múltiplos */
+h1, h2, .titulo  {
+  font-family: Arial, sans-serif;
+}
+
+/* Atributos */
+input[required] {
+  border: 2px solid red;
+}
+a[href="https://google.com"] {
+  color: blue;
+}
+img[src^="icon"] {
+  width: 50px;
+}
+a[href$=".pdf"] {
+  color: brown;
+}
+a[href*="login"] {
+  background-color: yellow;
+}
+
+/* Pseudo-classes */
+button:hover {
+  background-color: lightgreen;
+}
+li:first-child {
+  text-decoration: underline;
+}
+li:last-child {
+  color: purple;
+}
+li:nth-child(2) {
+  background-color: #eee;
+}
+p:nth-of-type(odd) {
+  background-color: #f9f9f9;
+}
+p:not(.alerta) {
+  color: gray;
+}
+input:checked + label {
+  font-weight: bold;
+}
+input:disabled {
+  background-color: #ccc;
+}
+
+/* Pseudo-elementos */
+h1::before {
+  content: "👉 ";
+}
+p::after {
+  content: " ✅";
+}
+p::first-letter {
+  font-size: 200%;
+}
+p::first-line {
+  color: blue;
+}
+
+/* Seletor Combinado */
+ul > li.alerta:first-child:hover {
+  color: red;
+}
+
+/* :is() */
+:is(h1, h2, h3) {
+  border-bottom: 1px solid #000;
+}
+
+/* :where() */
+:where(header, footer) {
+  background: #eee;
+}
+
+
+
+  </style>
+</head>
+<body>
+
+  <h1 id="cabecalho">Título com ID</h1>
+  <h2 class="titulo">Subtítulo com Classe</h2>
+  <p>Parágrafo normal</p>
+  <p class="alerta">Parágrafo com classe 'alerta'</p>
+
+  <div>
+    <p>Parágrafo dentro de div</p>
+    <section>
+      <p>Outro parágrafo dentro de div > section</p>
+    </section>
+  </div>
+
+  <ul>
+    <li>Item 1</li>
+    <li class="alerta">Item 2</li>
+    <li>Item 3</li>
+    <ul>
+      <li>Subitem</li>
+    </ul>
+  </ul>
+
+  <h1>Outro Título</h1>
+  <p>Parágrafo após título</p>
+  <p>Mais um parágrafo após título</p>
+
+  <a href="https://google.com">Link Google</a><br>
+  <a href="manual.pdf">Manual PDF</a><br>
+  <a href="/user/login">Login</a><br>
+
+  <form>
+    <input type="text" required><br>
+    <input type="checkbox" checked id="chk1"><label for="chk1">Check</label><br>
+    <input type="text" disabled><br>
+  </form>
+
+  <button>Botão</button>
+
+  <article>
+    <p>Artigo com imagem abaixo</p>
+    <img src="icone.png"> 
+  </article>
+
+</body>
+</html>
