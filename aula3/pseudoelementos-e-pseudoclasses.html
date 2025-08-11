@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemplo: Hover, Before, After e Animações</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f0f0f0;
+      padding: 30px;
+    }
+
+    .exemplo {
+      width: 200px;
+      height: 80px;
+      background-color: steelblue;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      text-align: center;
+      line-height: 80px;
+      margin-bottom: 30px;
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    /* HOVER COM TRANSIÇÃO */
+    .exemplo:hover {
+      transform: scale(1.1);
+      background-color: darkblue;
+    }
+
+    /* BEFORE: Adiciona um triângulo à esquerda */
+    .exemplo::before {
+      content: '';
+      position: absolute;
+      left: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-right: 20px solid steelblue;
+    }
+
+    /* AFTER: Adiciona um círculo decorativo à direita */
+    .exemplo::after {
+      content: '';
+      position: absolute;
+      right: -10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 12px;
+      height: 12px;
+      background-color: orange;
+      border-radius: 50%;
+      transition: background-color 0.3s ease;
+    }
+
+    /* Interação com after no hover */
+    .exemplo:hover::after {
+      background-color: yellow;
+    }
+
+    /* Foco em botão */
+    button:focus {
+      outline: 3px dashed red;
+    }
+
+    /* Active (quando clicando) */
+    button:active {
+      transform: scale(0.95);
+    }
+
+    button{
+     background-color: blue;
+     width: 150px;
+     border: 1px blue solid ;
+     color: white;
+    }
+
+    button:hover{
+     background-color: bisque;
+     color: black;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="exemplo">Passe o mouse</div>
+
+  <button>Botão com :focus e :active</button>
+
+</body>
+</html>
