@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display_subgrid</title>
+
+    <style>
+        .neto {
+            font-size: 3em;
+            border: 1px solid red;
+            margin: 10px;
+            
+                 
+        }
+
+        .pai {
+            display: grid;
+            grid-template-rows: 50px 50px 50px;
+            gap: 5px;
+            
+        }
+
+        .filho {
+            display: subgrid;
+            grid-row: span 3;
+            grid-template-rows: subgrid;
+            background-color: #def;
+        }
+    </style>
+</head>
+<body>
+    <div class="pai">
+        <div class="filho">
+            <div class="neto">Neto 1</div>
+            <div class="neto">Neto 2</div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Exemplo visual: align-items</title>
+  <style>
+    /* Estilo básico da página */
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background-color: #f0f0f0;
+      text-align: center; /* Centraliza títulos */
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      margin-top: 40px;
+      color: #333;
+    }
+
+    /* Container da grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 150px); /* 3 colunas de 150px cada */
+      gap: 10px; /* Espaço entre as células */
+      height: 200px; /* Altura fixa para mostrar alinhamento */
+      background-color: #fff;
+      border: 2px dashed #999; /* Delimita área da grid */
+      margin-bottom: 40px;
+      margin-left: auto;
+      margin-right: auto;
+      width: max-content;
+      position: relative;
+    }
+
+    /* Cada célula da grid - para visualização */
+    .grid > div {
+      border: 2px dashed #ccc; /* Delimita as células da grid */
+      position: relative;
+      display: flex; /* Usado para alinhar o item dentro da célula */
+      /* Alinhamento vertical é controlado pela propriedade align-items da grid */
+    }
+
+    /* Itens dentro das células */
+    .item {
+      background-color: #ef476f; /* Cor de fundo */
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      height: 60px;
+      width: 100px; /* Largura fixa para mostrar alinhamento */
+      margin: auto; /* Centraliza horizontalmente dentro da célula */
+      line-height: 60px; /* Centraliza o texto verticalmente dentro do item */
+      font-weight: bold;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    /* Texto explicativo abaixo da grid */
+    .info {
+      font-size: 14px;
+      color: #555;
+      font-weight: bold;
+      margin-top: -30px;
+      margin-bottom: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Exemplo visual: <code>align-items</code></h1>
+
+  <h2>align-items: start</h2>
+  <!-- Grid com alinhamento vertical no topo das células -->
+  <div class="grid" style="align-items: start;">
+    <div><div class="item">Topo</div></div>
+    <div><div class="item">Topo</div></div>
+    <div><div class="item">Topo</div></div>
+  </div>
+  <div class="info">Itens alinhados ao topo da célula</div>
+
+  <h2>align-items: center</h2>
+  <!-- Grid com alinhamento vertical no centro das células -->
+  <div class="grid" style="align-items: center;">
+    <div><div class="item">Meio</div></div>
+    <div><div class="item">Meio</div></div>
+    <div><div class="item">Meio</div></div>
+  </div>
+  <div class="info">Itens alinhados no centro vertical da célula</div>
+
+  <h2>align-items: end</h2>
+  <!-- Grid com alinhamento vertical na base das células -->
+  <div class="grid" style="align-items: end;">
+    <div><div class="item">Base</div></div>
+    <div><div class="item">Base</div></div>
+    <div><div class="item">Base</div></div>
+  </div>
+  <div class="info">Itens alinhados à base da célula</div>
+
+</body>
+</html>

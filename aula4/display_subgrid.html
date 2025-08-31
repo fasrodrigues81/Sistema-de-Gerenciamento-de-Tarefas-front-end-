@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemplo de display subgrid</title>
+  <style>
+
+     .neto{
+     font-size: 3em;
+     border: 1px solid red;
+          
+     }
+
+     .pai {
+     display: grid;
+     grid-template-rows: 50px 50px 50px;
+     gap: 5px;
+     }
+
+     .filho {
+     display: subgrid;
+     grid-row: span 3;
+     grid-template-rows: subgrid;
+     background-color: #def;
+     }
+
+
+
+  </style>
+  
+</head>
+<body>
+
+     <div class="pai">
+          <div class="filho">
+               <div class="neto">neto 1</div>
+               <div class="neto">neto 2</div>
+          </div>
+     </div>
+
+
+
+</body>
+</html>

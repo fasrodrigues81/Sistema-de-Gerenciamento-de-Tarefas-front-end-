@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Exemplos de Transições e Animações CSS</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      padding: 20px;
+      background-color: #f0f0f0;
+    }
+
+    .caixa {
+      width: 120px;
+      height: 120px;
+      background-color: coral;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      margin: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    /* ----------------------------- */
+    /* TRANSITION - EXEMPLOS        */
+    /* ----------------------------- */
+    .transicao {
+      transition-property: background-color, transform;
+      transition-duration: 0.6s;
+      transition-timing-function: ease-in-out;
+      transition-delay: 0.2s;
+    }
+
+    .transicao:hover {
+      background-color: teal;
+      transform: scale(1.2);
+    }
+
+    /* ----------------------------- */
+    /* ANIMAÇÃO - COM @KEYFRAMES    */
+    /* ----------------------------- */
+    @keyframes mover {
+      0%   { transform: translateX(0); background-color: red; }
+      50%  { transform: translateX(100px); background-color: orange; }
+      100% { transform: translateX(0); background-color: red; }
+    }
+
+    .animacao {
+      animation-name: mover;
+      animation-duration: 3s;
+      animation-delay: 0s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: ease-in-out;
+      animation-fill-mode: both;
+      animation-play-state: running;
+    }
+
+    /* Versão pausada para demonstrar animation-play-state */
+    .pausada {
+      animation-play-state: paused;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- TRANSIÇÃO COMPLETA -->
+  <div class="caixa transicao">Transição</div>
+
+  <!-- ANIMAÇÃO COMPLETA -->
+  <div class="caixa animacao">Animar</div>
+
+  <!-- ANIMAÇÃO PAUSADA -->
+  <div class="caixa animacao pausada">Pausada</div>
+
+</body>
+</html>

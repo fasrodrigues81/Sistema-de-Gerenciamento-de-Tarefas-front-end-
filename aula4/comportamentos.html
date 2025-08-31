@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Block vs Inline vs Inline-block</title>
+  <style>
+         
+          body {
+          font-family: Arial, sans-serif;
+          padding: 20px;
+          }
+
+          h1 {
+          margin-top: 40px;
+          color: #333;
+          }
+
+          /* Estilo para elementos do tipo block */
+          .bloco {
+          background-color: #f8b400;
+          border: 2px solid #c97a00;
+          color: white;
+          padding: 20px;
+          margin-bottom: 10px;
+          
+          }
+
+          /* Estilo para elementos do tipo inline */
+          .linha {
+          background-color: #2196f3;
+          color: white;
+          border: 2px solid #0b79d0;
+          padding: 10px;
+          margin-right: 10px;
+          display: inline; 
+          }
+
+          /* Estilo para elementos inline-block */
+          .meio {
+          background-color: #4caf50;
+          color: white;
+          border: 2px solid #388e3c;
+          padding: 20px;
+          margin: 5px;
+          width: 150px;
+          height: 100px;
+          text-align: center;
+          line-height: 60px;
+          display: inline-block;
+          }
+
+  </style>
+</head>
+<body>
+
+     <h1>Exemplo: Block</h1>
+     <div class="bloco">Bloco 1</div>
+     <div class="bloco">Bloco 2</div>
+     <div class="bloco">Bloco 3</div>
+     
+
+     <h1>Exemplo: Inline</h1>
+     <div class="linha">Inline 1</div>
+     <div class="linha">Inline 2</div>
+     <div class="linha">Inline 3</div>
+     <div class="linha">Inline 1</div>
+     <div class="linha">Inline 2</div>
+     <div class="linha">Inline 3</div>
+     
+
+
+     <h1>Exemplo: Inline-block</h1>
+     <div class="meio">Caixa 1</div>
+     <div class="meio">Caixa 2</div>
+     <div class="meio">Caixa 3</div>
+
+</body>
+</html>

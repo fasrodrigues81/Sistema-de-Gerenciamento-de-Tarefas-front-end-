@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+</head>
+<body>
+     
+
+     <script>
+          /* 
+     O switch funciona como o if...else if...else, mas de forma mais organizada.
+     - Ele compara a variável com valores fixos (casos).
+     - O break é importante para parar a execução depois de encontrar o caso certo.
+     - Se não colocar break, ele continua executando os próximos casos (fall-through).
+     - O default funciona como o else: é executado se nenhum caso for igual.
+     */
+
+
+           
+          let parametro = 10
+          
+          switch (parametro){
+               case 1:
+                    //se parametro === 1
+                    document.write('Parametro 1')
+                    break
+                    
+               case 2:
+                    document.write('Parametro 2')
+                    break
+               default:
+                    document.write('Default')
+
+          }
+
+          let fruta = prompt("Digite o nome de uma fruta:").toLowerCase();
+
+          switch (fruta) {
+          case "maçã":
+          document.write("Você escolheu maçã");
+          break;
+          case "banana":
+          document.write("Você escolheu banana");
+          break;
+          case "laranja":
+          document.write("Você escolheu laranja");
+          break;
+          default:
+          document.write("Fruta não disponível");
+          }
+
+
+          //com digitação de número
+          let numero = Number(prompt("Digite um número de 1 a 3:"));
+
+          switch (numero) {
+          case 1:
+          document.write("Você digitou 1");
+          break;
+          case 2:
+          document.write("Você digitou 2");
+          break;
+          case 3:
+          document.write("Você digitou 3");
+          break;
+          default:
+          document.write("Número fora do intervalo");
+          }
+
+
+               
+     </script>
+     
+</body>
+</html>

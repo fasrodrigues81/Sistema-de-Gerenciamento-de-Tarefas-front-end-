@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+</head>
+<body>
+
+     <script>
+          const nota = Number(prompt("Digite a nota do aluno: "))
+          const faltas = Number(prompt("Digite a quantidade de faltas do aluno: "))
+          const media = 7
+          const faltas_maximas = 15
+
+          if(nota >= media && faltas <= faltas_maximas){
+               document.write('Aprovado')
+          }
+          else{
+               document.write('Reprovado')
+          }
+
+          document.write('<br/>')
+
+          /*OPERADOR TERNÁRIO*/
+          // const resultado = ? <verdadeiro> : <falso>
+          //
+          const resultado = (nota >= media && faltas <= faltas_maximas) ? 'Aprovado' : 'Reprovado'
+          document.write(resultado)
+
+          
+     </script>
+
+
+     
+</body>
+</html>
